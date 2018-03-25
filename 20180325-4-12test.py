@@ -25,3 +25,24 @@ elif bmi > 24.5:
     print('体重偏重')
 else:
     print('体重正常')
+
+# 捕获异常
+#  Flag = True
+# while Flag:
+#     try:
+#         height = float(input('what is your height:'))
+#         weight = float(input('what is your weight: '))
+#         BMI = weight / (height * height)
+#     except:
+#         print('please enter number.')
+#     else:
+#         if 1:
+#             if BMI < 18.5:
+#                 print('you are slim.')
+#
+#             elif BMI > 24:
+#                 print('you are over weight.')
+#
+#             else:
+#                 print('you are OK.')
+#         Flag = bool(input("谢谢使用BMI测试\n输入任意键+回车继续测试，直接回车退出"))
