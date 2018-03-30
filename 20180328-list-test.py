@@ -10,6 +10,8 @@
 # （请先行自主思考，答案在之后的教程给出）
 score=[['张三', 89, 78, 91], ['李四', 99, 87], ['王五', 49, 55, 78]]
 score3 = sorted([[a[0],(a[1]+a[2]+a[3])/3] for a in score if len(a)==4],key=lambda x:x[1],reverse=True)
+# 根据高人指点，进一步用sum简化
+score4 = sorted([[a[0],sum(a[1:])/3] for a in score if len(a)==4],key=lambda x:x[1],reverse=True)
 
 
 # 以下为辅助理解推导过程
@@ -26,4 +28,5 @@ score2 = sorted(score1,key=lambda x:x[1],reverse=True)
 print(score1)
 print(score2)
 print(score3)
+print(score4)
 
