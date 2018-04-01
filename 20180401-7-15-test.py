@@ -14,9 +14,13 @@ import string
 # print(string.ascii_letters) 获取26个大小写字母
 # print(l)
 # random.shuffle(l)   将序列的所有元素随机排序。
+# random.sample(l,2)
 # print(l)
 
 for i in range(200):
     l = list(string.ascii_letters)
+    b = ''.join(random.sample(l, 8))
+    # print(b)
     random.shuffle(l)
+    a = ''.join(l[:8])
     print(''.join(l[:8]))
