@@ -13,10 +13,6 @@ p_color = ['S', 'H', 'D', 'C']
 p_number = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 p_king = ['Red-Joker', 'Black-Joker']
 p_all = []
-player1 = []
-player2 = []
-player3 = []
-not_deal = []
 
 
 # 生成54张扑克牌
