@@ -19,8 +19,8 @@ import string
 
 for i in range(200):
     l = list(string.ascii_letters)
-    b = ''.join(random.sample(l, 8))
+    # b = ''.join(random.sample(l, 8))
     # print(b)
     random.shuffle(l)
     a = ''.join(l[:8])
-    print(''.join(l[:8]))
+    print(a)
