@@ -21,6 +21,11 @@ for i in range(200):
     l = list(string.ascii_letters)
     # b = ''.join(random.sample(l, 8))
     # print(b)
+
     random.shuffle(l)
     a = ''.join(l[:8])
     print(a)
+    # c = ''
+    # for j in range(8):
+    #     c += ''.join(random.choice(l))
+    # print(c)
