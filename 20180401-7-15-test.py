@@ -29,3 +29,46 @@ for i in range(200):
     # for j in range(8):
     #     c += ''.join(random.choice(l))
     # print(c)
+
+# 方法四：
+# 英文字母的大小写字符都有一个相对应的ASCII码，而chr()函数可以将一个数字转变成该ASCII码对应的字符，
+# 而ord()函数可以得到单个字符的ASCII码。因此我们可以将这道题转化为生成随机数并将该数字转化为字符的做法。
+# 先生成一个随机数，之后通过chr函数将其转化为字符
+result_list = []
+
+
+# 生成单张优惠券
+def gen_code():
+    ll = []
+    for x in range(4):
+        ll.append(chr(random.randint(65, 90)))
+        ll.append(chr(random.randint(97, 122)))
+    # print(''.join(ll))
+    return ''.join(ll)
+
+
+# 判断优惠券是否在结果list中
+def is_in_list(s_str, l_list):
+    if s_str in l_list:
+        return True
+    else:
+        return False
+
+
+# 打印优惠券
+def print_code(list1):
+    for i in range(len(list1)):
+        print('优惠券', i + 1, '：', list1[i])
+
+
+# 入口main方法
+def code_main():
+    while True:
+        code = gen_code()
+        if not is_in_list(code, result_list):
+            result_list.append(code)
+        if len(result_list) == 200:
+            print_code(result_list)
+            break
+
+code_main()
