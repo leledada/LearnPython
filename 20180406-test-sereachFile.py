@@ -12,17 +12,21 @@ def findfile(key, inputdir='.'):
             if key in name:  # 如果文件名中有关键字
                 found_list.append(full_name)
                 # print('key in name ', found_list)
-                # 查找文件内容，# 搜到图片会报错？？？
-            with open(full_name, 'r', encoding='utf8') as f:
-                for l in f.readlines():
-                    if key in l:  # 如果当前行中有关键字
-                        found_list.append(full_name + ' : ' + l)
+                # 查找文件内容，# 搜到图片会报错？？？ 用except处理
+            try:
+                with open(full_name, 'r', encoding='utf8') as f:
+                    for l in f.readlines():
+                        if key in l:  # 如果当前行中有关键字
+                            found_list.append(full_name + ' : ' + l)
+            except Exception as e:
+                print(full_name,'读取遇到异常 ERROR:', e)
+
     return found_list
 
 
 # 输入搜索关键字和路径
-keyword = input('search:')
-path = input('in:')
+keyword = input('查找关键字 key:')
+path = input('在哪个目录 in:')
 if not path.strip():
     path = '.'
 
