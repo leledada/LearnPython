@@ -71,19 +71,10 @@ for result in results:
 
 # print('--replace-->', results_replace)
 
+# 将处理后的成绩另存为一个新文件。
 with open('report_result.txt', 'a', encoding='utf8') as f_w:
     f_w.write('名次 姓名 语文 数学 英语 物理 化学 生物 政治 历史 地理 总分 平均分' + '\n')
     f_w.writelines(avg_result)
     f_w.writelines(results_replace)
 
 print('Completion of data processing ~~')
-
-
-
-
-
-
-# 统计每名学生总成绩、计算平均并从高到低重新排名；
-# 汇总每一科目的平均分和总平均分（见下表第一行）；
-# 添加名次，替换60分以下的成绩为“不及格”；
-# 将处理后的成绩另存为一个新文件。
