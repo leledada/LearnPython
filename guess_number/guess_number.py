@@ -78,9 +78,14 @@ def go_or_stop():
         return True
 
 
-num = random.randint(1, 100)
+# 获取随机数
+def get_randint():
+    g_num = random.randint(1, 100)
+    return g_num
+
 print("请输入100以内的整数数字: ")
 times = 0
+num = get_randint()
 bingo = False
 while not bingo:
     times += 1
@@ -95,3 +100,4 @@ while not bingo:
         show_and_record()
         bingo = go_or_stop()  # 用户选择是否继续
         times = 0  # 用户继续新游戏，计数器清零
+        num = get_randint()
