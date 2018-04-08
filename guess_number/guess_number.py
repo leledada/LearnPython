@@ -78,7 +78,7 @@ def go_or_stop():
         return True
 
 
-num = random.randint(1, 5)
+num = random.randint(1, 100)
 print("请输入100以内的整数数字: ")
 times = 0
 bingo = False
