@@ -15,4 +15,4 @@ print(''.join(word_list))
 result_list = re.findall(r'\b\w+\b', ''.join(word_list))
 
 print(result_list)
-print('there are %d words in %s' % (len(result_list),file))
+print('there are %d words in %s' % (len(result_list), file))
