@@ -3,7 +3,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 
-setFont = ImageFont.truetype(r"happyfont2016.ttf", 50)  # 这里我之前使用Arial.ttf时不能打出中文，用华文细黑就可以
+setFont = ImageFont.truetype(r"happyfont2016.ttf", 50)  # 站酷快乐体
 fillColor = "#ff0000"
 image = Image.open("yuantu.jpg")
 draw = ImageDraw.Draw(image)
