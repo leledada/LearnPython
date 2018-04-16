@@ -12,6 +12,24 @@ import datetime
 today = datetime.date.today()
 
 
+def input_d(prompt):
+    while True:
+        d = input(prompt)
+        if d.isdigit():
+            return d
+        else:
+            print('输入有误，请输入数字.')
+
+
+def input_s(prompt):
+    while True:
+        d = input(prompt)
+        if d.isalnum():
+            return d
+        else:
+            print('输入有误，请输入数字或字母.')
+
+
 def select_assets():
     day, asset, liability, net_asset = '0', '0', '0', '0'
     with open('account.txt', 'r', encoding='utf8') as f_1:
@@ -35,11 +53,11 @@ def show_assets():
 
 def recording():
     day, assets, liability, net_asset = select_assets()
-    deal_op = input("交易对象：")
-    income_n = input("收入/万：")
-    expend_n = input("支出/万：")
-    receivable_n = input("应收账款/万:")
-    payable_n = input("应出账款/万：")
+    deal_op = input_s("交易对象：")
+    income_n = input_d("收入/万：")
+    expend_n = input_d("支出/万：")
+    receivable_n = input_d("应收账款/万:")
+    payable_n = input_d("应出账款/万：")
     assets = int(assets) + int(income_n) - int(expend_n)  # 资产=资产+收入-支出
     liability = int(liability) + int(payable_n) - int(receivable_n)  # 负债=负债+应出账款-应收账款
     net_asset = assets - liability
@@ -97,7 +115,7 @@ def deal_with_key(key):
 
 def sub_select(flag):
     if flag_2 == '1':
-        key = input("请输入公司名称：")
+        key = input_d("请输入公司名称：")
         deal_with_key(key)
     elif flag_2 == '2':
         last_ten()
@@ -117,12 +135,12 @@ def go_or_stop():
 go_flag = True
 while go_flag:
     print("1.查账；2.记账")
-    flag_1 = input("请选择服务：")
+    flag_1 = input_d("请选择服务：")
     if flag_1 == '2':
         recording()
         go_flag = go_or_stop()
     else:
         print('1.查询与某公司的贸易往来\n2.查询最近十笔交易记录\n3.查询最新资产负债情况')
-        flag_2 = input("请选择：")
+        flag_2 = input_d("请选择：")
         sub_select(flag_2)
         go_flag = go_or_stop()
