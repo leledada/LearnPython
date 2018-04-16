@@ -115,7 +115,7 @@ def deal_with_key(key):
 
 def sub_select(flag):
     if flag_2 == '1':
-        key = input_d("请输入公司名称：")
+        key = input_s("请输入公司名称：")
         deal_with_key(key)
     elif flag_2 == '2':
         last_ten()
