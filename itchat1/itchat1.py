@@ -47,7 +47,7 @@ numImages = len(imgList)
 print('我有%s个好友, 得到%s张头像' % (friendsSum, numImages))
 print()
 
-eachSize = 64
+eachSize = 100
 eachLine = int(math.sqrt(numImages)) + 1
 print("单个图像边长", eachSize, "像素，一行", eachLine, "个头像，最终图像边长", eachSize * eachLine)
 
