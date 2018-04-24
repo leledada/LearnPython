@@ -18,7 +18,9 @@ def my_request(url):
 
 def parse_html(data):
     tree = etree.HTML(data)
-    xpath_div = tree.xpath('//div[@class="article block untagged mb15 typs_long"]')
+    # xpath_div = tree.xpath('//div[@class="article block untagged mb15"]')
+    xpath_div = tree.xpath('//div[contains(@class,"article block untagged mb15")]')
+    print(xpath_div)
 
     data = ''
     for div in xpath_div:
@@ -31,6 +33,7 @@ def parse_html(data):
         content = head + '\n' + ''.join(content) + '\n'
 
         data += content
+        print(data)
 
     return data
 
