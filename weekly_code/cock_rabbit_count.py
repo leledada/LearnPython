@@ -15,7 +15,7 @@ n = my_input("feets(n):")
 
 
 def count_cock(m, n):
-    for cock in range(m):
+    for cock in range(m+1):
         rabbit = m - cock
         if n == rabbit * 4 + cock * 2:
             print("cocks: ", cock, "rabbits: ", rabbit)
